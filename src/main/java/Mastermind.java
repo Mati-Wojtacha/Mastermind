@@ -4,19 +4,19 @@ public class Mastermind {
 
     int liczba_pow = 0;
     int kod[];
-    public static final String ROWNA_DLUGOSC = "dlugosci kodu jesr rowna z kolorami";
-    public static final String BLAD_DLUGOSCI = "liczba podanych kolorow jest mniejsza od " +
+    public static final String CORRECT = "dlugosci kodu jesr rowna z kolorami";
+    public static final String ERROR = "liczba podanych kolorow jest mniejsza od " +
             "dlugosci kodu podaj ponownie kolory";
-    public static final String ZA_DUZO = "liczba podanych kolorow jest wieksza od dlugosci kodu";
+    public static final String TU_MANY = "liczba podanych kolorow jest wieksza od dlugosci kodu";
 
     String sprawdzanie(int kolor[]) {
         if (kolor.length > kod.length) {
-            return ZA_DUZO;
+            return TU_MANY;
         }
         else if(kolor.length<kod.length){
-            throw new RuntimeException(BLAD_DLUGOSCI);
+            throw new RuntimeException(ERROR);
         }
-            return ROWNA_DLUGOSC;
+            return CORRECT;
     }
 
     Wynik wynik(int kolor[]) {
